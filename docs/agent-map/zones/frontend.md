@@ -16,7 +16,7 @@ Responsabilité : boutique onlyPoele, présentation des poêles, galerie animée
 - `frontend/public/media/` : visuels d'ambiance photographiques générés, sans références produit fictives ni mention de génération dans l'interface. Provenance et prompts dans `docs/design/asset-prompts.json`.
 - `frontend/public/illustrations/hero-pan.svg` : secours statique de la scène 3D.
 - `frontend/public/phosphor-LICENSE.txt` : notice MIT distribuée avec les icônes.
-- `frontend/src/main.tsx`
+- `frontend/src/main.tsx` : initialise la position sur le hero à chaque chargement complet, puis monte React. Retire l'ancienne ancre en conservant chemin, paramètres et état de l'historique ; la navigation par ancres fonctionne ensuite dans la page.
 - `frontend/src/styles.css`
 - `frontend/src/lib/utils.ts`
 - `frontend/components.json`
