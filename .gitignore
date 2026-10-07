@@ -36,3 +36,8 @@ Thumbs.db
 
 
 .promethee/local-checks.json
+
+# Démo publiée : frontend uniquement ; conserver le squelette backend local.
+/backend/
+/.agents/
+.vercel/

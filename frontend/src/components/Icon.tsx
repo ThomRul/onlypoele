@@ -5,8 +5,6 @@ import { MinusIcon } from '@phosphor-icons/react/dist/csr/Minus';
 import { PlusIcon } from '@phosphor-icons/react/dist/csr/Plus';
 import { CookingPotIcon } from '@phosphor-icons/react/dist/csr/CookingPot';
 import { ForkKnifeIcon } from '@phosphor-icons/react/dist/csr/ForkKnife';
-import { PauseIcon } from '@phosphor-icons/react/dist/csr/Pause';
-import { PlayIcon } from '@phosphor-icons/react/dist/csr/Play';
 
 const icons = {
   arrow: ArrowRightIcon,
@@ -16,8 +14,6 @@ const icons = {
   plus: PlusIcon,
   cooking: CookingPotIcon,
   utensils: ForkKnifeIcon,
-  pause: PauseIcon,
-  play: PlayIcon,
 };
 
 export function Icon({ name }: { name: keyof typeof icons }) {

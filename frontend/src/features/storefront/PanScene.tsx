@@ -1,32 +1,28 @@
-import { useEffect, useRef, useState } from 'react';
-import { Icon } from '../../components/Icon';
+import { useEffect, useRef } from 'react';
 import { useMediaQuery } from '../../components/useMediaQuery';
 import type { PanSceneController } from './createPanScene';
 
 export function PanScene() {
   const host = useRef<HTMLDivElement>(null);
-  const controller = useRef<PanSceneController | null>(null);
-  const pausedRef = useRef(false);
-  const [paused, setPaused] = useState(false);
-  const [available, setAvailable] = useState(false);
+  const hasPlayed = useRef(false);
   const reduced = useMediaQuery('(prefers-reduced-motion: reduce)');
 
   useEffect(() => {
-    if (reduced) return;
+    if (reduced || hasPlayed.current) return;
     let cancelled = false;
-    let started = false;
+    let loading = false;
+    let controller: PanSceneController | undefined;
     const load = () => {
-      if (started || cancelled) return;
-      started = true;
+      if (loading || cancelled) return;
+      loading = true;
       import('./createPanScene')
         .then(({ createPanScene }) => {
           if (cancelled || !host.current) return;
-          controller.current = createPanScene(host.current, () => setAvailable(false));
-          controller.current.setPaused(pausedRef.current);
-          setAvailable(true);
+          controller = createPanScene(host.current);
+          hasPlayed.current = true;
         })
         .catch(() => {
-          // L'illustration SVG reste visible si WebGL ou le chargement échoue.
+          // L'image de la pile reste affichée si WebGL n'est pas disponible.
         });
     };
     const observer =
@@ -46,17 +42,9 @@ export function PanScene() {
     return () => {
       cancelled = true;
       observer?.disconnect();
-      controller.current?.dispose();
-      controller.current = null;
+      controller?.dispose();
     };
   }, [reduced]);
-
-  function toggle() {
-    const next = !paused;
-    pausedRef.current = next;
-    controller.current?.setPaused(next);
-    setPaused(next);
-  }
 
   return (
     <div className="pan-scene-wrap">
@@ -64,16 +52,10 @@ export function PanScene() {
         className="pan-scene"
         ref={host}
         role="img"
-        aria-label="Illustration d'une poêle et de deux œufs au plat"
+        aria-label="Huit poêles empilées, avec deux œufs au plat sur la dernière"
       >
-        <img src="/illustrations/hero-pan.svg" alt="" width="760" height="680" loading="lazy" />
+        <img src="/illustrations/pan-stack.png" alt="" width="800" height="540" loading="lazy" />
       </div>
-      {available && !reduced && (
-        <button type="button" className="scene-control" onClick={toggle} aria-pressed={paused}>
-          <Icon name={paused ? 'play' : 'pause'} />
-          {paused ? 'Reprendre l’animation' : 'Mettre en pause'}
-        </button>
-      )}
     </div>
   );
 }

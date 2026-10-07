@@ -64,9 +64,16 @@ describe('parcours de la boutique', () => {
   it('utilise l’illustration statique quand les animations sont réduites', () => {
     const { container } = render(<App />);
     expect(
-      screen.getByRole('img', { name: "Illustration d'une poêle et de deux œufs au plat" }),
+      screen.getByRole('img', {
+        name: 'Huit poêles empilées, avec deux œufs au plat sur la dernière',
+      }),
     ).toBeVisible();
     expect(container.querySelector('canvas')).not.toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: 'Mettre en pause' })).not.toBeInTheDocument();
+    const stage = container.querySelector('.cooking-stage')!;
+    expect(stage.querySelector('button')).not.toBeInTheDocument();
+    expect(stage.querySelector('.pan-scene img')).toHaveAttribute(
+      'src',
+      '/illustrations/pan-stack.png',
+    );
   });
 });

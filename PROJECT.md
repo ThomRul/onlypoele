@@ -21,7 +21,7 @@ Permettre aux visiteurs de consulter les poêles et de constituer un panier.
 - Galerie : `AccordionGallery` de React Bits, source fournie par l'utilisateur, adaptée à TypeScript, au clavier, au tactile et à la réduction des mouvements. GSAP autorisé explicitement pour ce composant.
 - Icônes : Phosphor Icons pour React, sous licence MIT, avec imports individuels. Motifs culinaires pour les éléments décoratifs ; variantes grasses pour les commandes.
 - À l'ouverture et à l'actualisation, départ sur le hero : la position est initialisée avant le montage React, la restauration automatique est désactivée et l'ancienne ancre de section est retirée de l'URL. Les liens de section servent ensuite la navigation dans la page.
-- Animations : scène de poêle Three.js dans `CookingStage`, chargée lorsque son emplacement approche de l'écran, avec pause, suspension hors écran et lorsque l'onglet est masqué. Illustration SVG de secours et affichage statique lorsque les mouvements sont réduits. Motion sert l'entrée du hero, des étiquettes et les transitions des interactions. Le bandeau éditorial reste statique.
+- Animations : empilement de huit poêles Three.js fourni par l'utilisateur, intégré dans `CookingStage` avec la version déjà installée et sans CDN. Chargé à l'approche de l'écran, il se joue une seule fois lorsque la scène apparaît, puis garde sa pose finale ; aucun bouton, compteur ou indication d'utilisation. Le rendu est suspendu hors écran et lorsque l'onglet est masqué. Une capture de la pose finale sert de secours et d'affichage statique lorsque les mouvements sont réduits. Motion sert l'entrée du hero, des étiquettes et les transitions des interactions. Le bandeau éditorial reste statique.
 - Contenu en français ; nom affiché exactement `onlyPoele`. Les images de Partake servent uniquement de référence et ne sont pas utilisées sur le site. Les quatre visuels d'ambiance originaux sont dans `frontend/public/media/` ; les prompts et leur mode de génération sont dans [asset-prompts.json](docs/design/asset-prompts.json).
 
 ## Contraintes et décisions actuelles
@@ -29,9 +29,9 @@ Permettre aux visiteurs de consulter les poêles et de constituer un panier.
 - Socle technique : React / TypeScript / Vite, NestJS / TypeORM / PostgreSQL, Tailwind / shadcn
 - Options sélectionnées : database=postgresql, uiAnimations=true, editorialAnimations=false
 - Docker : sans Docker. PostgreSQL local sera géré par Prométhée lors de l'étape backend ; association et connexion restent à préparer.
-- Hébergement ou distribution : à préciser si cela influence les choix.
+- Démonstration de formation : projet instancié avec Prométhée pour apprendre à créer un site avec l'IA. Publication du frontend sur [GitHub](https://github.com/ThomRul/onlypoele), puis déploiement statique sur Vercel depuis le dossier `frontend`. Le squelette backend reste local, ignoré par Git ; aucun service ou secret n'est nécessaire pour la démo.
 
 ## Questions ouvertes
 
 - Informations des produits : noms, prix et devise, caractéristiques, descriptions et visuels.
-- Hébergement et périmètre d'une éventuelle commande à définir lors des étapes concernées.
+- Périmètre d'une éventuelle commande à définir lors des étapes concernées.

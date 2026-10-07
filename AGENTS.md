@@ -12,7 +12,7 @@ Pour choisir les skills, suivre [la matrice du projet](docs/agent-guides/skill-r
 - Vérifier l'état des outils et services préparés par Prométhée avant de développer, leurs commandes accessibles et les étapes restantes. Réutiliser les installations compatibles ; un blocage pour version incompatible doit être expliqué, sans mise à jour/remplacement ou version parallèle pour le contourner. L'utilisateur corrige la version avant relance. Ne pas modifier implicitement la configuration globale.
 - Clarifier Docker si la décision est ouverte : besoin, développement/déploiement, services. Prométhée n'installe ni Docker ni WSL. Enregistrer la décision et adapter les commandes/règles si elle change.
 - Pour le démarrage ou le changement d'une base, suivre [le guide services](docs/agent-guides/services.md). Les nouvelles instances natives démarrent à la demande ; les bases Docker sont exclues du contrôle de Prométhée. Actualiser le mode de chaque base, commandes et cartes après dockerisation ; préserver les réglages des instances existantes.
-- Périmètre déclaré : boutique onlyPoele, catalogue de poêles à frire et panier ; étape actuelle frontend uniquement. Docker : sans Docker, PostgreSQL local géré par Prométhée lors de l'étape backend.
+- Périmètre déclaré : démo frontend onlyPoele, issue d'une formation sur la création d'un site avec l'IA. Docker : aucun. Publication GitHub et Vercel depuis `frontend` ; `backend` reste local et ignoré par Git.
 
 ## Architecture et réutilisation
 

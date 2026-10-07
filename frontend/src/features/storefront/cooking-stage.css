@@ -22,12 +22,11 @@
   position: relative;
   inset: auto;
   width: min(800px, 100%);
-  height: 540px;
   margin: 0 auto;
 }
 .storefront .pan-scene {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  height: 540px;
 }
 .storefront .pan-scene img,
 .storefront .pan-scene canvas {
@@ -40,31 +39,6 @@
 }
 .storefront .pan-scene[data-scene-ready='true'] img {
   visibility: hidden;
-}
-.storefront .scene-control {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 9px 16px;
-  border: 1px solid var(--background);
-  border-radius: 99px;
-  background: var(--background);
-  color: var(--foreground);
-  font-size: 11px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-.storefront .scene-control svg {
-  width: 16px;
-  height: 16px;
-}
-.storefront .scene-control:focus-visible {
-  outline-color: var(--background);
 }
 .storefront .stage-sticker {
   position: absolute;
@@ -86,15 +60,11 @@
   --sticker-shadow: #661050;
   transform: rotate(8deg);
 }
-.storefront .stage-caption {
-  font-size: 11px;
-  letter-spacing: 0.04em;
-}
 @media (max-width: 760px) {
   .storefront .cooking-stage {
     padding: 62px 4% 36px;
   }
-  .storefront .cooking-stage .pan-scene-wrap {
+  .storefront .cooking-stage .pan-scene {
     height: 480px;
   }
   .storefront .stage-sticker {

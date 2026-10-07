@@ -36,7 +36,6 @@ export function CookingStage() {
           <span>DE JOUER.</span>
         </motion.div>
       </div>
-      <p className="stage-caption">Illustration 3D de présentation</p>
     </section>
   );
 }
