@@ -23,7 +23,7 @@ Responsabilité : boutique onlyPoele, présentation des poêles, galerie animée
 - `frontend/components.json`
 - `frontend/vite.config.ts`
 - `frontend/vercel.json` : build Vite statique et réécriture SPA ; racine Vercel à régler sur `frontend`.
-- `README.md` : contexte Prométhée et formation, démarrage local et publication GitHub/Vercel.
+- `README.md` : présentation du projet, contexte Prométhée et formation.
 
 ## Dépendances et frontières
 
