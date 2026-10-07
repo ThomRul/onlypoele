@@ -1,0 +1,3 @@
+Projet : onlyPoele. Profil : Web React et API. Étape actuelle : frontend uniquement. Les produits et leurs visuels seront fournis par l'utilisateur. Docker : aucun ; PostgreSQL local géré par Prométhée lors de l'étape backend.
+
+Travaille dans ce projet en suivant AGENTS.md. Consulte PROJECT.md pour les décisions fonctionnelles et visuelles, puis le routage des cartes pour le code utile. Réutilise les installations compatibles et les preuves encore valables. La préparation PostgreSQL et l'association du service natif restent prévues pour l'étape backend.

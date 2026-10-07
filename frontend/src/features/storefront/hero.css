@@ -1,0 +1,180 @@
+.storefront .hero {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  min-height: 650px;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: #e4d5ee;
+}
+.storefront .hero-copy {
+  position: relative;
+  z-index: 1;
+  padding: 76px 0 72px 10%;
+}
+.storefront .hero .eyebrow {
+  margin-bottom: 26px;
+}
+.storefront .hero h1 {
+  font-size: clamp(72px, 8.6vw, 124px);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+}
+.storefront .hero h1 > span {
+  display: block;
+}
+.storefront .hero-description {
+  margin: 30px 0 26px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.storefront .hero-art {
+  position: relative;
+  min-width: 0;
+  min-height: 580px;
+}
+.storefront .pan-scene-wrap {
+  position: absolute;
+  inset: 25px -20px 50px -40px;
+}
+.storefront .pan-scene {
+  position: absolute;
+  inset: 0;
+}
+.storefront .pan-scene img,
+.storefront .pan-scene canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.storefront .pan-scene[data-scene-ready='true'] img {
+  visibility: hidden;
+}
+.storefront .scene-control {
+  position: absolute;
+  bottom: 0;
+  right: 12%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #a8a0b8;
+  border-radius: 99px;
+  background: #fff6ebdf;
+  color: var(--foreground);
+  font-size: 11px;
+  cursor: pointer;
+}
+.storefront .scene-control span {
+  font-size: 15px;
+}
+.storefront .hero-sticker {
+  color: var(--accent-foreground);
+  position: absolute;
+  z-index: 2;
+  top: 45px;
+  right: 11%;
+  width: 126px;
+  height: 126px;
+  display: grid;
+  place-content: center;
+  border: 2px solid var(--foreground);
+  border-radius: 50%;
+  transform: rotate(14deg);
+  background: var(--accent);
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 23px;
+  line-height: 1;
+  box-shadow: 3px 4px 0 var(--foreground);
+}
+.storefront .hero-sticker strong {
+  font-size: 30px;
+  font-weight: 400;
+}
+.storefront .art-caption {
+  position: absolute;
+  bottom: 24px;
+  right: 8%;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  letter-spacing: 0.03em;
+}
+.storefront .hero-spark {
+  position: absolute;
+  left: 12%;
+  bottom: 78px;
+  transform: rotate(12deg);
+}
+.storefront .hero-spark svg {
+  width: 56px;
+  height: 56px;
+}
+@media (max-width: 1000px) {
+  .storefront .hero {
+    min-height: 560px;
+  }
+  .storefront .hero-copy {
+    padding-top: 70px;
+  }
+  .storefront .hero-art {
+    min-height: 530px;
+  }
+  .storefront .hero-description {
+    font-size: 15px;
+  }
+  .storefront .hero-sticker {
+    right: 8%;
+    width: 108px;
+    height: 108px;
+    font-size: 20px;
+  }
+  .storefront .hero-sticker strong {
+    font-size: 27px;
+  }
+}
+@media (max-width: 760px) {
+  .storefront .hero {
+    grid-template-columns: 1fr;
+  }
+  .storefront .hero-copy {
+    padding: 46px 6% 0;
+    text-align: center;
+  }
+  .storefront .hero h1 {
+    font-size: clamp(76px, 14vw, 104px);
+  }
+  .storefront .hero-description {
+    margin: 24px 0;
+  }
+  .storefront .hero-art {
+    min-height: 410px;
+  }
+  .storefront .pan-scene-wrap {
+    inset: 10px 0 50px;
+  }
+  .storefront .hero-sticker {
+    top: 28px;
+    right: 8%;
+    width: 92px;
+    height: 92px;
+    font-size: 17px;
+  }
+  .storefront .hero-sticker strong {
+    font-size: 23px;
+  }
+  .storefront .hero-spark {
+    bottom: 75px;
+    left: 9%;
+  }
+  .storefront .hero-spark svg {
+    width: 37px;
+    height: 37px;
+  }
+  .storefront .scene-control {
+    right: 7%;
+  }
+}

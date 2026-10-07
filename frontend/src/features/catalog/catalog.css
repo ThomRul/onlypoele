@@ -1,0 +1,128 @@
+.storefront .catalog-section {
+  padding-top: 10px;
+  padding-bottom: 96px;
+}
+.storefront .catalog-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 36px;
+}
+.storefront .catalog-heading > p {
+  padding-bottom: 7px;
+  font-size: 15px;
+}
+.storefront .catalog-empty {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 40px;
+  border: 2px solid var(--foreground);
+  border-radius: var(--radius);
+  background: #ffe7cb;
+}
+.storefront .catalog-empty h3 {
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+.storefront .catalog-empty p {
+  color: var(--muted-foreground);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.storefront .empty-spark svg {
+  width: 64px;
+  height: 64px;
+}
+.storefront .empty-label {
+  margin-left: auto;
+  padding: 8px 17px;
+  border: 1px solid var(--foreground);
+  border-radius: 99px;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 700;
+  transform: rotate(-8deg);
+}
+.storefront .product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+.storefront .product-card {
+  scroll-margin-top: 24px;
+}
+.storefront .product-image {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--secondary);
+}
+.storefront .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.storefront .product-info {
+  padding-top: 22px;
+}
+.storefront .product-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 0 14px;
+}
+.storefront .product-title h3 {
+  font-size: 27px;
+}
+.storefront .product-title > p {
+  white-space: nowrap;
+  font-weight: 800;
+}
+.storefront .product-info > p:not(.eyebrow) {
+  color: var(--muted-foreground);
+  font-size: 14px;
+}
+.storefront .product-info .button {
+  margin-top: 24px;
+  width: 100%;
+  justify-content: space-between;
+  gap: 10px;
+}
+@media (max-width: 760px) {
+  .storefront .catalog-section {
+    padding-top: 0;
+  }
+  .storefront .catalog-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .storefront .catalog-empty {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 26px;
+    gap: 20px;
+  }
+  .storefront .catalog-empty h3 {
+    font-size: 28px;
+  }
+  .storefront .empty-spark svg {
+    width: 42px;
+    height: 42px;
+  }
+  .storefront .empty-label {
+    margin-left: 0;
+  }
+  .storefront .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 500px) {
+  .storefront .product-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
