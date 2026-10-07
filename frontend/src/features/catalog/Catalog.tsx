@@ -33,8 +33,8 @@ export function Catalog({ products, quantities, onAdd }: Props) {
       </div>
       {products.length === 0 ? (
         <div className="catalog-empty">
-          <span className="empty-spark" aria-hidden="true">
-            <Icon name="spark" />
+          <span className="empty-icon" aria-hidden="true">
+            <Icon name="cooking" />
           </span>
           <div>
             <h3>La sélection se prépare.</h3>

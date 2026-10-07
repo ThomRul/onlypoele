@@ -55,7 +55,6 @@ export function Hero() {
         <span>À VOS</span>
         <span>POÊLES.</span>
       </motion.div>
-      <p className="art-caption">Visuel d’ambiance généré</p>
     </section>
   );
 }

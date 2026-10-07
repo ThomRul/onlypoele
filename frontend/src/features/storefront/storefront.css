@@ -184,9 +184,9 @@
   transform: rotate(-90deg);
 }
 .storefront .footer-wordmark {
-  padding: 36px 0 20px;
+  padding: 36px 0 36px;
   font-family: var(--font-display);
-  font-size: clamp(48px, 16vw, 230px);
+  font-size: clamp(48px, 16vw, 225px);
   letter-spacing: -0.045em;
   line-height: 0.9;
   white-space: nowrap;
@@ -195,6 +195,12 @@
   color: #ffcd78;
   font-size: 0.6em;
   padding-left: 0.15em;
+}
+.storefront .footer-wordmark svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.08em;
 }
 .storefront .footer-caption {
   padding-top: 20px;

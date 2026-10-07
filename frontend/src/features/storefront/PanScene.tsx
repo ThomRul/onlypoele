@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Icon } from '../../components/Icon';
 import { useMediaQuery } from '../../components/useMediaQuery';
 import type { PanSceneController } from './createPanScene';
 
@@ -69,7 +70,7 @@ export function PanScene() {
       </div>
       {available && !reduced && (
         <button type="button" className="scene-control" onClick={toggle} aria-pressed={paused}>
-          <span aria-hidden="true">{paused ? '▷' : 'Ⅱ'}</span>
+          <Icon name={paused ? 'play' : 'pause'} />
           {paused ? 'Reprendre l’animation' : 'Mettre en pause'}
         </button>
       )}

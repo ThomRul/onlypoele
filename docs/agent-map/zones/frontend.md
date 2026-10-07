@@ -13,8 +13,9 @@ Responsabilité : boutique onlyPoele, présentation des poêles, galerie animée
 - `frontend/src/features/catalog/products.ts` : type Product, catalogue actuellement vide et formatage monétaire.
 - `frontend/src/features/catalog/Catalog.tsx` : produits ou état vide.
 - `frontend/src/features/cart/useCart.ts` et `CartDialog.tsx` : quantités, persistance locale et dialogue natif.
-- `frontend/public/media/` : visuels d'ambiance photographiques générés, explicitement identifiés, sans références produit fictives. Prompts dans `docs/design/asset-prompts.json`.
+- `frontend/public/media/` : visuels d'ambiance photographiques générés, sans références produit fictives ni mention de génération dans l'interface. Provenance et prompts dans `docs/design/asset-prompts.json`.
 - `frontend/public/illustrations/hero-pan.svg` : secours statique de la scène 3D.
+- `frontend/public/phosphor-LICENSE.txt` : notice MIT distribuée avec les icônes.
 - `frontend/src/main.tsx`
 - `frontend/src/styles.css`
 - `frontend/src/lib/utils.ts`
@@ -27,7 +28,7 @@ Le parcours actuel utilise un catalogue local et localStorage ; aucun appel API.
 
 ## Éléments réutilisables
 
-Tokens CSS, styles partagés de boutons, `Icon`, `useMediaQuery` et `cn()`. Polices libres Archivo Black et Barlow Condensed hébergées localement avec Fontsource. Les CSS de fonctionnalités sont limités à `.storefront` ; ceux de la galerie à `.accordion-gallery`.
+Tokens CSS, styles partagés de boutons, `useMediaQuery` et `cn()`. `frontend/src/components/Icon.tsx` adapte les composants Phosphor Icons (MIT), importés individuellement, avec SVG décoratifs masqués aux lecteurs d'écran. Polices libres Archivo Black et Barlow Condensed hébergées localement avec Fontsource. Les CSS de fonctionnalités sont limités à `.storefront` ; ceux de la galerie à `.accordion-gallery`.
 
 Mouvement réduit : photographie du hero immobile, illustration SVG à la place de la scène 3D et transitions immédiates de la galerie. Three.js est chargé dans un chunk distinct, suspendu hors écran et dans un onglet masqué, et peut être mis en pause. Le dialogue natif assure la modalité dans les navigateurs compatibles.
 

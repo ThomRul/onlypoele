@@ -59,8 +59,9 @@
   cursor: pointer;
   white-space: nowrap;
 }
-.storefront .scene-control span {
-  font-size: 15px;
+.storefront .scene-control svg {
+  width: 16px;
+  height: 16px;
 }
 .storefront .scene-control:focus-visible {
   outline-color: var(--background);

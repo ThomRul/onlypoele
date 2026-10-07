@@ -55,16 +55,6 @@
   color: #9f0074;
   transform: rotate(8deg);
 }
-.storefront .art-caption {
-  position: absolute;
-  right: 20px;
-  bottom: 12px;
-  padding: 5px 10px;
-  border-radius: 4px;
-  background: #fff6ebe8;
-  color: #00559b;
-  font-size: 10px;
-}
 @media (max-width: 1100px) {
   .storefront .hero {
     height: 780px;
@@ -116,10 +106,6 @@
     bottom: 55px;
     left: 5%;
     font-size: 19px;
-  }
-  .storefront .art-caption {
-    right: 10px;
-    bottom: 10px;
   }
 }
 @media (max-width: 400px) {

@@ -17,17 +17,17 @@ const illustrations: GalleryItem[] = [
   {
     image: '/media/gallery-breakfast.png',
     label: 'Du matin…',
-    alt: 'Visuel d’ambiance généré : une poêle avec deux œufs au plat sur un fond abricot',
+    alt: 'Une poêle avec deux œufs au plat sur un fond abricot',
   },
   {
     image: '/media/gallery-cooking.png',
     label: '…au dîner.',
-    alt: 'Visuel d’ambiance généré : une poêle avec un plat cuisiné sur un fond lilas',
+    alt: 'Une poêle avec un plat cuisiné sur un fond lilas',
   },
   {
     image: '/media/gallery-vegetables.png',
     label: 'Et selon vos envies.',
-    alt: 'Visuel d’ambiance généré : une poêle de légumes sur un plan de travail menthe',
+    alt: 'Une poêle de légumes sur un plan de travail menthe',
   },
 ];
 
@@ -67,9 +67,9 @@ export default function App() {
         <Hero />
         <div className="brand-strip" aria-hidden="true">
           <span>POÊLES À FRIRE</span>
-          <Icon name="spark" />
+          <Icon name="utensils" />
           <span>ENVIE DE CUISINER</span>
-          <Icon name="spark" />
+          <Icon name="cooking" />
           <span>onlyPoele</span>
         </div>
         <section className="gallery-section section" id="galerie" aria-labelledby="gallery-title">
@@ -111,11 +111,7 @@ export default function App() {
             grayscale={false}
           />
           <div className="gallery-caption">
-            <p>
-              {products.length
-                ? 'Sélectionnez une vue pour l’agrandir.'
-                : 'Visuels d’ambiance générés · catalogue à venir'}
-            </p>
+            <p>{products.length ? 'Sélectionnez une vue pour l’agrandir.' : 'Catalogue à venir'}</p>
             <span>{String(gallery.length).padStart(2, '0')} VUES</span>
           </div>
         </section>
@@ -136,7 +132,10 @@ export default function App() {
           </a>
         </div>
         <p className="footer-wordmark" aria-label="onlyPoele">
-          onlyPoele<span aria-hidden="true">✳</span>
+          onlyPoele
+          <span aria-hidden="true">
+            <Icon name="utensils" />
+          </span>
         </p>
         <p className="footer-caption">La boutique de poêles à frire.</p>
       </footer>

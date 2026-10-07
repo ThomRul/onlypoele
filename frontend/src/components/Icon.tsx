@@ -1,24 +1,34 @@
-type IconName = 'arrow' | 'bag' | 'close' | 'minus' | 'plus' | 'spark';
+import { ArrowRightIcon } from '@phosphor-icons/react/dist/csr/ArrowRight';
+import { ShoppingBagIcon } from '@phosphor-icons/react/dist/csr/ShoppingBag';
+import { XIcon } from '@phosphor-icons/react/dist/csr/X';
+import { MinusIcon } from '@phosphor-icons/react/dist/csr/Minus';
+import { PlusIcon } from '@phosphor-icons/react/dist/csr/Plus';
+import { CookingPotIcon } from '@phosphor-icons/react/dist/csr/CookingPot';
+import { ForkKnifeIcon } from '@phosphor-icons/react/dist/csr/ForkKnife';
+import { PauseIcon } from '@phosphor-icons/react/dist/csr/Pause';
+import { PlayIcon } from '@phosphor-icons/react/dist/csr/Play';
 
-const paths: Record<IconName, string> = {
-  arrow: 'M5 12h14m-6-6 6 6-6 6',
-  bag: 'M5 7h14l1 14H4L5 7Zm3 0V5a4 4 0 0 1 8 0v2',
-  close: 'm6 6 12 12M6 18 18 6',
-  minus: 'M5 12h14',
-  plus: 'M5 12h14M12 5v14',
-  spark: 'm12 2 2.8 7.2L22 12l-7.2 2.8L12 22l-2.8-7.2L2 12l7.2-2.8L12 2Z',
+const icons = {
+  arrow: ArrowRightIcon,
+  bag: ShoppingBagIcon,
+  close: XIcon,
+  minus: MinusIcon,
+  plus: PlusIcon,
+  cooking: CookingPotIcon,
+  utensils: ForkKnifeIcon,
+  pause: PauseIcon,
+  play: PlayIcon,
 };
 
-export function Icon({ name }: { name: IconName }) {
+export function Icon({ name }: { name: keyof typeof icons }) {
+  const Component = icons[name];
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d={paths[name]}
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <Component
+      size={24}
+      weight={name === 'cooking' || name === 'utensils' ? 'duotone' : 'bold'}
+      color="currentColor"
+      aria-hidden="true"
+      focusable="false"
+    />
   );
 }
