@@ -1,0 +1,26 @@
+{
+  "mode": "built-in image_gen",
+  "purpose": "Visuels d'ambiance originaux, sans références produit réelles",
+  "assets": [
+    {
+      "key": "hero",
+      "file": "frontend/public/media/hero-kitchen.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: original editorial cookware illustration for the onlyPoele frontend, not an actual product listing. Style: premium, joyful, sharply detailed studio food-and-cookware photography, tactile real materials, warm high-key lighting, confident saturated pastel props. No people, no logos, no packaging, no text, no watermarks. Do not depict a real named product or brand. Primary request: wide landscape hero photograph, about 2:1. A warm ivory seamless wall and pale cream kitchen countertop. Keep the left 43 percent clean and softly lit for large blue HTML typography. On the right, a large unbranded charcoal frying pan holding two golden sunny-side-up eggs with a few herbs; its handle angles towards the upper right. Behind it, upright simple lilac and sunny-yellow circular plates and a folded fuchsia linen napkin create the cheerful color-block rhythm of Partake Foods's new food photography. A few cherry tomatoes, lemon halves, rosemary leaves and peppercorns scattered naturally across the bottom edge, carefully art-directed. Clear separation between the quiet left copy zone and the abundant right still life, without a visible dividing line. Camera about 35 degrees above countertop, full photographic texture, believable scale and elegant shadows."
+    },
+    {
+      "key": "gallery-egg",
+      "file": "frontend/public/media/gallery-breakfast.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: original editorial cookware illustration for the onlyPoele frontend, not an actual product listing. Style: premium, joyful, sharply detailed studio food-and-cookware photography, tactile real materials, warm high-key lighting, confident saturated pastel props. No people, no logos, no packaging, no text, no watermarks. Do not depict a real named product or brand. Primary request: portrait 3:4 editorial still life. An unbranded matte charcoal frying pan viewed almost from above, two fried eggs with vivid golden yolks and tiny rosemary leaves, on a sunny warm apricot countertop. Pan dominates the middle and upper portion; its wooden handle points diagonally toward upper right. A tiny linen corner and a few peppercorns at the edges. Keep the lower 18 percent simple for a caption. Strong dimensional shadows, close enough to see tactile eggs and cookware, playful high-end commercial food styling."
+    },
+    {
+      "key": "gallery-detail",
+      "file": "frontend/public/media/gallery-cooking.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: original editorial cookware illustration for the onlyPoele frontend, not an actual product listing. Style: premium, joyful, sharply detailed studio food-and-cookware photography, tactile real materials, warm high-key lighting, confident saturated pastel props. No people, no logos, no packaging, no text, no watermarks. Do not depict a real named product or brand. Primary request: portrait 3:4 editorial close-up of an unbranded stainless-steel frying pan on a pale lavender tabletop. The entire round pan interior is visible at a three-quarter angle, curved rim and handle catch beautiful natural studio reflections, soft lavender linen and a single lemon slice at the edge. Pan fills most of the frame; no indistinct white fog, no artificial plastic texture. Keep the lower 18 percent clean for a caption. This is photographic cookware art, not a labeled catalog product."
+    },
+    {
+      "key": "gallery-kitchen",
+      "file": "frontend/public/media/gallery-vegetables.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: original editorial cookware illustration for the onlyPoele frontend, not an actual product listing. Style: premium, joyful, sharply detailed studio food-and-cookware photography, tactile real materials, warm high-key lighting, confident saturated pastel props. No people, no logos, no packaging, no text, no watermarks. Do not depict a real named product or brand. Primary request: portrait 3:4 editorial cooking still life. An unbranded dark frying pan at three-quarter angle, filled with a small colorful mix of cherry tomatoes and sliced zucchini, on a pale mint kitchen worktop with sunny-yellow tile detail, soft folded cream linen and a rosemary sprig. Crisp highlights, believable cooked vegetables, soft steam, physically correct single handle, joyful natural cooking mood. Pan dominates the upper and middle frame. Keep the lower 18 percent simple for a caption."
+    }
+  ]
+}

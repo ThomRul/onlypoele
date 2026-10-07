@@ -1,54 +1,61 @@
 import { motion } from 'motion/react';
 import { Icon } from '../../components/Icon';
 import { useMediaQuery } from '../../components/useMediaQuery';
-import { PanScene } from './PanScene';
 import './hero.css';
 
 export function Hero() {
   const reduced = useMediaQuery('(prefers-reduced-motion: reduce)');
   return (
     <section className="hero" aria-labelledby="hero-title">
+      <motion.img
+        className="hero-image"
+        src="/media/hero-kitchen.png"
+        alt=""
+        width="1774"
+        height="887"
+        fetchPriority="high"
+        initial={reduced ? false : { scale: 1.035 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+      />
       <div className="hero-copy">
-        <motion.p
-          className="eyebrow"
-          initial={reduced ? false : { opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          LA BOUTIQUE QUI A LA POÊLE
-        </motion.p>
         <h1 id="hero-title">
-          {['Ça va', 'chauffer.'].map((line, index) => (
+          {['Prenez goût', 'à la cuisine.'].map((line, index) => (
             <motion.span
               key={line}
-              initial={reduced ? false : { opacity: 0, y: 35, rotate: -2 }}
-              animate={{ opacity: 1, y: 0, rotate: 0 }}
-              transition={{ duration: 0.65, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              initial={reduced ? false : { opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 + index * 0.12, ease: [0.22, 1, 0.36, 1] }}
             >
               {line}
             </motion.span>
           ))}
         </h1>
-        <p className="hero-description">
-          Une boutique dédiée aux poêles à frire.
-          <br />
-          Et à tout ce que vous allez y faire sauter.
-        </p>
         <a className="button button-primary" href="#galerie">
-          Découvrir l’univers <Icon name="arrow" />
+          Explorer les poêles <Icon name="arrow" />
         </a>
       </div>
-      <div className="hero-art">
-        <span className="hero-sticker">
-          À vos
-          <br />
-          <strong>poêles !</strong>
-        </span>
-        <PanScene />
-        <p className="art-caption">Illustration de présentation</p>
-        <span className="hero-spark" aria-hidden="true">
-          <Icon name="spark" />
-        </span>
-      </div>
+      <motion.div
+        className="paper-sticker hero-sticker hero-sticker-top"
+        aria-hidden="true"
+        initial={reduced ? false : { opacity: 0, scale: 0.85, rotate: -16 }}
+        animate={{ opacity: 1, scale: 1, rotate: -8 }}
+        transition={{ delay: 0.35, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <span>FAITES</span>
+        <span>SAUTER !</span>
+      </motion.div>
+      <motion.div
+        className="paper-sticker hero-sticker hero-sticker-bottom"
+        aria-hidden="true"
+        initial={reduced ? false : { opacity: 0, scale: 0.85, rotate: 16 }}
+        animate={{ opacity: 1, scale: 1, rotate: 8 }}
+        transition={{ delay: 0.5, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <span>À VOS</span>
+        <span>POÊLES.</span>
+      </motion.div>
+      <p className="art-caption">Visuel d’ambiance généré</p>
     </section>
   );
 }

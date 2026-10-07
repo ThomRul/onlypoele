@@ -18,11 +18,11 @@ export function Catalog({ products, quantities, onAdd }: Props) {
     <section className="catalog-section section" id="poeles" aria-labelledby="catalog-title">
       <div className="catalog-heading">
         <div>
-          <p className="eyebrow">LA SÉLECTION ONLYPOELE</p>
+          <p className="eyebrow">À VOUS DE CHOISIR</p>
           <h2 id="catalog-title">
-            À chacune
+            La sélection
             <br />
-            sa cuisine.
+            onlyPoele.
           </h2>
         </div>
         <p>

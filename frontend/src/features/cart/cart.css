@@ -161,7 +161,7 @@
     padding: 24px 20px;
   }
   .storefront .cart-header h2 {
-    font-size: 30px;
+    font-size: 25px;
   }
   .storefront .cart-item {
     grid-template-columns: 60px 1fr;

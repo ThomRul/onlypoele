@@ -13,18 +13,38 @@ export function PanScene() {
   useEffect(() => {
     if (reduced) return;
     let cancelled = false;
-    import('./createPanScene')
-      .then(({ createPanScene }) => {
-        if (cancelled || !host.current) return;
-        controller.current = createPanScene(host.current, () => setAvailable(false));
-        controller.current.setPaused(pausedRef.current);
-        setAvailable(true);
-      })
-      .catch(() => {
-        // L'illustration SVG reste visible si WebGL ou le chargement échoue.
-      });
+    let started = false;
+    const load = () => {
+      if (started || cancelled) return;
+      started = true;
+      import('./createPanScene')
+        .then(({ createPanScene }) => {
+          if (cancelled || !host.current) return;
+          controller.current = createPanScene(host.current, () => setAvailable(false));
+          controller.current.setPaused(pausedRef.current);
+          setAvailable(true);
+        })
+        .catch(() => {
+          // L'illustration SVG reste visible si WebGL ou le chargement échoue.
+        });
+    };
+    const observer =
+      typeof IntersectionObserver === 'undefined'
+        ? null
+        : new IntersectionObserver(
+            (entries) => {
+              if (entries.some((entry) => entry.isIntersecting)) {
+                observer?.disconnect();
+                load();
+              }
+            },
+            { rootMargin: '100px' },
+          );
+    if (host.current && observer) observer.observe(host.current);
+    else load();
     return () => {
       cancelled = true;
+      observer?.disconnect();
       controller.current?.dispose();
       controller.current = null;
     };
@@ -45,13 +65,7 @@ export function PanScene() {
         role="img"
         aria-label="Illustration d'une poêle et de deux œufs au plat"
       >
-        <img
-          src="/illustrations/hero-pan.svg"
-          alt=""
-          width="760"
-          height="680"
-          fetchPriority="high"
-        />
+        <img src="/illustrations/hero-pan.svg" alt="" width="760" height="680" loading="lazy" />
       </div>
       {available && !reduced && (
         <button type="button" className="scene-control" onClick={toggle} aria-pressed={paused}>

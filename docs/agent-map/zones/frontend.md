@@ -5,13 +5,16 @@ Responsabilité : boutique onlyPoele, présentation des poêles, galerie animée
 ## Entrées et fichiers utiles
 
 - `frontend/src/App.tsx`
-- `frontend/src/features/storefront/Hero.tsx` et `PanScene.tsx` : présentation, Motion et chargement différé de Three.js.
+- `frontend/src/features/storefront/Hero.tsx` : hero photographique pleine largeur et entrée Motion.
+- `frontend/src/features/storefront/StoreHeader.tsx` : logo centré, navigation et panier ; en-tête transparent puis crème selon le défilement.
+- `frontend/src/features/storefront/CookingStage.tsx` et `PanScene.tsx` : présentation 3D et chargement de Three.js à l'approche du viewport.
 - `frontend/src/features/storefront/createPanScene.ts` : géométrie de présentation, boucle de rendu, visibilité, pause et libération des ressources GPU.
 - `frontend/src/components/AccordionGallery.tsx` et son CSS : galerie React Bits fournie par l'utilisateur, GSAP, navigation clavier et affichage mobile.
 - `frontend/src/features/catalog/products.ts` : type Product, catalogue actuellement vide et formatage monétaire.
 - `frontend/src/features/catalog/Catalog.tsx` : produits ou état vide.
 - `frontend/src/features/cart/useCart.ts` et `CartDialog.tsx` : quantités, persistance locale et dialogue natif.
-- `frontend/public/illustrations/` : SVG originaux de présentation, sans références produit fictives.
+- `frontend/public/media/` : visuels d'ambiance photographiques générés, explicitement identifiés, sans références produit fictives. Prompts dans `docs/design/asset-prompts.json`.
+- `frontend/public/illustrations/hero-pan.svg` : secours statique de la scène 3D.
 - `frontend/src/main.tsx`
 - `frontend/src/styles.css`
 - `frontend/src/lib/utils.ts`
@@ -24,9 +27,9 @@ Le parcours actuel utilise un catalogue local et localStorage ; aucun appel API.
 
 ## Éléments réutilisables
 
-Tokens CSS, styles partagés de boutons, `Icon`, `useMediaQuery` et `cn()`. Police libre Lilita One hébergée localement avec Fontsource. Les CSS de fonctionnalités sont limités à `.storefront` ; ceux de la galerie à `.accordion-gallery`.
+Tokens CSS, styles partagés de boutons, `Icon`, `useMediaQuery` et `cn()`. Polices libres Archivo Black et Barlow Condensed hébergées localement avec Fontsource. Les CSS de fonctionnalités sont limités à `.storefront` ; ceux de la galerie à `.accordion-gallery`.
 
-Mouvement réduit : affichage SVG du hero et transitions immédiates de la galerie. Three.js est chargé dans un chunk distinct, suspendu hors écran et dans un onglet masqué, et peut être mis en pause. Le dialogue natif assure la modalité dans les navigateurs compatibles.
+Mouvement réduit : photographie du hero immobile, illustration SVG à la place de la scène 3D et transitions immédiates de la galerie. Three.js est chargé dans un chunk distinct, suspendu hors écran et dans un onglet masqué, et peut être mis en pause. Le dialogue natif assure la modalité dans les navigateurs compatibles.
 
 ## Vérifications
 

@@ -1,180 +1,135 @@
 .storefront .hero {
-  display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  min-height: 650px;
-  max-width: 1440px;
-  margin: 0 auto;
-  background: #e4d5ee;
+  position: relative;
+  min-height: 690px;
+  height: min(880px, 100svh);
+  background: #f9ede0;
+  isolation: isolate;
+  overflow: hidden;
+}
+.storefront .hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
 }
 .storefront .hero-copy {
-  position: relative;
-  z-index: 1;
-  padding: 76px 0 72px 10%;
-}
-.storefront .hero .eyebrow {
-  margin-bottom: 26px;
+  position: absolute;
+  top: 50%;
+  left: 5.5%;
+  width: 45%;
+  transform: translateY(-32%);
 }
 .storefront .hero h1 {
-  font-size: clamp(72px, 8.6vw, 124px);
-  line-height: 0.9;
+  font-size: clamp(70px, 6.5vw, 100px);
+  line-height: 0.91;
   letter-spacing: -0.035em;
+  text-shadow: 4px 4px #82d8e7;
 }
 .storefront .hero h1 > span {
   display: block;
 }
-.storefront .hero-description {
-  margin: 30px 0 26px;
-  font-size: 17px;
-  line-height: 1.6;
-}
-.storefront .hero-art {
-  position: relative;
-  min-width: 0;
-  min-height: 580px;
-}
-.storefront .pan-scene-wrap {
-  position: absolute;
-  inset: 25px -20px 50px -40px;
-}
-.storefront .pan-scene {
-  position: absolute;
-  inset: 0;
-}
-.storefront .pan-scene img,
-.storefront .pan-scene canvas {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.storefront .pan-scene[data-scene-ready='true'] img {
-  visibility: hidden;
-}
-.storefront .scene-control {
-  position: absolute;
-  bottom: 0;
-  right: 12%;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 8px 12px;
-  border: 1px solid #a8a0b8;
-  border-radius: 99px;
-  background: #fff6ebdf;
-  color: var(--foreground);
-  font-size: 11px;
-  cursor: pointer;
-}
-.storefront .scene-control span {
-  font-size: 15px;
+.storefront .hero-copy .button {
+  margin-top: 32px;
 }
 .storefront .hero-sticker {
-  color: var(--accent-foreground);
   position: absolute;
   z-index: 2;
-  top: 45px;
-  right: 11%;
-  width: 126px;
-  height: 126px;
-  display: grid;
-  place-content: center;
-  border: 2px solid var(--foreground);
-  border-radius: 50%;
-  transform: rotate(14deg);
-  background: var(--accent);
-  text-align: center;
-  font-family: var(--font-display);
-  font-size: 23px;
-  line-height: 1;
-  box-shadow: 3px 4px 0 var(--foreground);
+  font-size: clamp(20px, 2.2vw, 31px);
 }
-.storefront .hero-sticker strong {
-  font-size: 30px;
-  font-weight: 400;
+.storefront .hero-sticker-top {
+  top: 22%;
+  right: 10%;
+  --sticker-color: #82d8e7;
+  --sticker-shadow: #00559b;
+  color: #00559b;
+  transform: rotate(-8deg);
+}
+.storefront .hero-sticker-bottom {
+  bottom: 10%;
+  left: 47%;
+  --sticker-color: #f0b7d9;
+  --sticker-shadow: #be008b;
+  color: #9f0074;
+  transform: rotate(8deg);
 }
 .storefront .art-caption {
   position: absolute;
-  bottom: 24px;
-  right: 8%;
-  color: var(--muted-foreground);
+  right: 20px;
+  bottom: 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: #fff6ebe8;
+  color: #00559b;
   font-size: 10px;
-  letter-spacing: 0.03em;
 }
-.storefront .hero-spark {
-  position: absolute;
-  left: 12%;
-  bottom: 78px;
-  transform: rotate(12deg);
-}
-.storefront .hero-spark svg {
-  width: 56px;
-  height: 56px;
-}
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .storefront .hero {
-    min-height: 560px;
+    height: 780px;
+  }
+  .storefront .hero h1 {
+    font-size: clamp(48px, 6.5vw, 76px);
   }
   .storefront .hero-copy {
-    padding-top: 70px;
+    left: 4%;
+    width: 49%;
   }
-  .storefront .hero-art {
-    min-height: 530px;
-  }
-  .storefront .hero-description {
-    font-size: 15px;
-  }
-  .storefront .hero-sticker {
-    right: 8%;
-    width: 108px;
-    height: 108px;
-    font-size: 20px;
-  }
-  .storefront .hero-sticker strong {
-    font-size: 27px;
+  .storefront .hero-image {
+    object-position: 57% center;
   }
 }
 @media (max-width: 760px) {
   .storefront .hero {
-    grid-template-columns: 1fr;
+    min-height: 840px;
+    height: auto;
+  }
+  .storefront .hero-image {
+    inset: auto 0 0;
+    height: 470px;
+    object-position: 82% center;
   }
   .storefront .hero-copy {
-    padding: 46px 6% 0;
+    top: 130px;
+    left: 5%;
+    width: 90%;
+    transform: none;
     text-align: center;
   }
   .storefront .hero h1 {
-    font-size: clamp(76px, 14vw, 104px);
+    font-size: clamp(44px, 10vw, 70px);
+    line-height: 0.94;
+    text-shadow: 3px 3px #82d8e7;
   }
-  .storefront .hero-description {
-    margin: 24px 0;
+  .storefront .hero-copy .button {
+    margin-top: 28px;
   }
-  .storefront .hero-art {
-    min-height: 410px;
+  .storefront .hero-sticker-top {
+    top: auto;
+    bottom: 335px;
+    left: 5%;
+    right: auto;
+    font-size: 19px;
   }
-  .storefront .pan-scene-wrap {
-    inset: 10px 0 50px;
+  .storefront .hero-sticker-bottom {
+    bottom: 55px;
+    left: 5%;
+    font-size: 19px;
   }
-  .storefront .hero-sticker {
-    top: 28px;
-    right: 8%;
-    width: 92px;
-    height: 92px;
-    font-size: 17px;
+  .storefront .art-caption {
+    right: 10px;
+    bottom: 10px;
   }
-  .storefront .hero-sticker strong {
-    font-size: 23px;
+}
+@media (max-width: 400px) {
+  .storefront .hero {
+    min-height: 800px;
   }
-  .storefront .hero-spark {
-    bottom: 75px;
-    left: 9%;
+  .storefront .hero-copy {
+    top: 120px;
   }
-  .storefront .hero-spark svg {
-    width: 37px;
-    height: 37px;
-  }
-  .storefront .scene-control {
-    right: 7%;
+  .storefront .hero h1 {
+    font-size: clamp(38px, 11vw, 44px);
   }
 }

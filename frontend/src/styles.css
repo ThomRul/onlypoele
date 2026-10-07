@@ -26,25 +26,26 @@
 :root {
   --radius: 1.5rem;
   --background: #fff6eb;
-  --foreground: #133b71;
+  --foreground: #00559b;
   --card: #fffaf3;
-  --card-foreground: #133b71;
+  --card-foreground: #00559b;
   --popover: #fff6eb;
-  --popover-foreground: #133b71;
-  --primary: #ffe276;
-  --primary-foreground: #133b71;
-  --secondary: #e4d5ee;
-  --secondary-foreground: #133b71;
+  --popover-foreground: #00559b;
+  --primary: #be008b;
+  --primary-foreground: #fff6eb;
+  --secondary: #d8bfe5;
+  --secondary-foreground: #00559b;
   --muted: #f4eadd;
   --muted-foreground: #425b7d;
-  --accent: #ff782d;
+  --accent: #ff7700;
   --accent-foreground: #103466;
   --destructive: #b91c1c;
   --border: #d2cbbc;
   --input: #425b7d;
-  --ring: #133b71;
-  --font-display: 'Lilita One', 'Arial Rounded MT Bold', sans-serif;
-  --font-body: 'Trebuchet MS', Arial, sans-serif;
+  --ring: #00559b;
+  --font-display: 'Archivo Black', Arial, sans-serif;
+  --font-label: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: Arial, sans-serif;
 }
 @layer base {
   * {

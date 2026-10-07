@@ -1,0 +1,111 @@
+.storefront .site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 4%;
+  transition:
+    background-color 200ms ease,
+    padding 200ms ease;
+  pointer-events: none;
+}
+.storefront .site-header[data-solid='true'] {
+  padding: 14px 4%;
+  background: var(--background);
+}
+.storefront .site-header > * {
+  pointer-events: auto;
+}
+.storefront .wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4vw, 60px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  text-decoration: none;
+  text-shadow: 2px 2px #b7e4e3;
+}
+.storefront nav {
+  display: flex;
+  gap: 10px;
+}
+.storefront nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 18px;
+  border: 2px solid var(--foreground);
+  border-radius: 9px;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-label);
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.storefront nav a:hover {
+  background: #ffcd78;
+}
+.storefront .site-header .cart-toggle {
+  justify-self: end;
+  min-height: 46px;
+  padding: 8px 12px 8px 18px;
+  gap: 12px;
+  background: var(--background);
+}
+.storefront .cart-count {
+  display: grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 5px;
+  border-radius: 50%;
+  background: var(--foreground);
+  color: var(--background);
+  font-size: 11px;
+}
+@media (max-width: 900px) {
+  .storefront .site-header {
+    gap: 16px;
+    padding: 24px 4%;
+  }
+  .storefront nav a {
+    padding: 8px 12px;
+    font-size: 18px;
+  }
+  .storefront .wordmark {
+    font-size: 36px;
+  }
+}
+@media (max-width: 600px) {
+  .storefront .site-header,
+  .storefront .site-header[data-solid='true'] {
+    grid-template-columns: 1fr auto;
+    padding: 18px 5%;
+  }
+  .storefront .wordmark {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    font-size: clamp(27px, 7.8vw, 32px);
+  }
+  .storefront .cart-toggle {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .storefront .cart-toggle > span:not(.cart-count) {
+    display: none;
+  }
+  .storefront nav {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .storefront .site-header {
+    transition: none;
+  }
+}

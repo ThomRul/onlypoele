@@ -9,23 +9,25 @@ import { Catalog } from './features/catalog/Catalog';
 import { CartDialog } from './features/cart/CartDialog';
 import { useCart } from './features/cart/useCart';
 import { Hero } from './features/storefront/Hero';
+import { StoreHeader } from './features/storefront/StoreHeader';
+import { CookingStage } from './features/storefront/CookingStage';
 import './features/storefront/storefront.css';
 
 const illustrations: GalleryItem[] = [
   {
-    image: '/illustrations/pan-peach.svg',
-    label: 'Sous tous les angles',
-    alt: 'Illustration d’une poêle sur un fond pêche',
+    image: '/media/gallery-breakfast.png',
+    label: 'Du matin…',
+    alt: 'Visuel d’ambiance généré : une poêle avec deux œufs au plat sur un fond abricot',
   },
   {
-    image: '/illustrations/pan-lilac.svg',
-    label: 'Place à la cuisine',
-    alt: 'Illustration d’une poêle avec des œufs au plat sur un fond lilas',
+    image: '/media/gallery-cooking.png',
+    label: '…au dîner.',
+    alt: 'Visuel d’ambiance généré : une poêle avec un plat cuisiné sur un fond lilas',
   },
   {
-    image: '/illustrations/pan-blue.svg',
-    label: 'À vous de jouer',
-    alt: 'Illustration d’une poêle sur un fond bleu',
+    image: '/media/gallery-vegetables.png',
+    label: 'Et selon vos envies.',
+    alt: 'Visuel d’ambiance généré : une poêle de légumes sur un plan de travail menthe',
   },
 ];
 
@@ -60,27 +62,7 @@ export default function App() {
       <a className="skip-link" href="#contenu">
         Aller au contenu
       </a>
-      <div className="top-note">À vos poêles, prêts, cuisinez.</div>
-      <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="onlyPoele, accueil">
-          onlyPoele<span aria-hidden="true">✳</span>
-        </a>
-        <nav aria-label="Navigation principale">
-          <a href="#galerie">L’univers</a>
-          <a href="#poeles">Les poêles</a>
-        </nav>
-        <button
-          type="button"
-          className="button cart-toggle"
-          onClick={() => setCartOpen(true)}
-          aria-haspopup="dialog"
-          aria-label={`Panier, ${cart.count} article${cart.count === 1 ? '' : 's'}`}
-        >
-          <Icon name="bag" />
-          <span>Panier</span>
-          <span className="cart-count">{cart.count}</span>
-        </button>
-      </header>
+      <StoreHeader count={cart.count} onOpenCart={() => setCartOpen(true)} />
       <main id="contenu">
         <Hero />
         <div className="brand-strip" aria-hidden="true">
@@ -99,19 +81,14 @@ export default function App() {
             transition={{ duration: 0.5 }}
           >
             <div>
-              <p className="eyebrow">LE PLAISIR COMMENCE ICI</p>
+              <p className="eyebrow">LES POÊLES EN BONNE COMPAGNIE</p>
               <h2 id="gallery-title">
-                La poêle au
+                De quoi vous
                 <br />
-                <span>premier plan.</span>
+                <span>mettre en appétit.</span>
               </h2>
             </div>
             <div className="gallery-intro">
-              <p>
-                Un petit tour en cuisine.
-                <br />
-                Explorez les vues, à votre rythme.
-              </p>
               <a className="text-link" href="#poeles">
                 Voir les poêles <Icon name="arrow" />
               </a>
@@ -120,12 +97,12 @@ export default function App() {
           <AccordionGallery
             items={gallery}
             defaultIndex={1}
-            height={500}
+            height={590}
             gap={16}
-            radius={24}
+            radius={18}
             expandRatio={0.52}
-            accentColor="#ffe276"
-            overlayColor="#133b71"
+            accentColor="#fff6eb"
+            overlayColor="#00559b"
             textColor="#fff6eb"
             trigger="click"
             tilt={3}
@@ -137,11 +114,12 @@ export default function App() {
             <p>
               {products.length
                 ? 'Sélectionnez une vue pour l’agrandir.'
-                : 'Illustrations de présentation · catalogue à venir'}
+                : 'Visuels d’ambiance générés · catalogue à venir'}
             </p>
             <span>{String(gallery.length).padStart(2, '0')} VUES</span>
           </div>
         </section>
+        <CookingStage />
         <Catalog
           products={products}
           onAdd={add}
